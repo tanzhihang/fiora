@@ -148,14 +148,6 @@ class Sidebar extends Component {
                                 :
                                 null
                         }
-                        <Tooltip placement="right" mouseEnterDelay={0.3} overlay={<span>源码</span>}>
-                            <a href="https://github.com/yinxin630/fiora" target="_black" rel="noopener noreferrer">
-                                <IconButton width={40} height={40} icon="github" iconSize={26} />
-                            </a>
-                        </Tooltip>
-                        {Sidebar.renderTooltip('下载APP', <IconButton width={40} height={40} icon="app" iconSize={28} onClick={this.toggleAppDownloadDialog} />)}
-                        {Sidebar.renderTooltip('打赏', <IconButton width={40} height={40} icon="dashang" iconSize={26} onClick={this.toggleRewardDialog} />)}
-                        {Sidebar.renderTooltip('关于', <IconButton width={40} height={40} icon="about" iconSize={26} onClick={this.toggleInfoDialog} />)}
                         {Sidebar.renderTooltip('设置', <IconButton width={40} height={40} icon="setting" iconSize={26} onClick={this.toggleSettingDialog} />)}
                         {Sidebar.renderTooltip('退出登录', <IconButton width={40} height={40} icon="logout" iconSize={26} onClick={Sidebar.logout} />)}
                     </div>
@@ -227,49 +219,6 @@ class Sidebar extends Component {
                         </div>
                     </Dialog>
                     <SelfInfo visible={userDialog} onClose={this.toggleUserDialog} />
-                    <Dialog className="dialog reward " visible={rewardDialog} title="打赏" onClose={this.toggleRewardDialog}>
-                        <div className="content">
-                            <p>如果你觉得这个聊天室代码对你有帮助, 希望打赏下给个鼓励~~<br />作者大多数时间在线, 欢迎提问, 有问必答</p>
-                            <div>
-                                <img src={require('@/assets/images/alipay.jpg')} />
-                                <img src={require('@/assets/images/wxpay.jpg')} />
-                            </div>
-                        </div>
-                    </Dialog>
-                    <Dialog className="dialog fiora-info " visible={infoDialog} title="关于" onClose={this.toggleInfoDialog}>
-                        <div className="content">
-                            <div>
-                                <p>作者主页</p>
-                                <a href="https://suisuijiang.com" target="_black" rel="noopener noreferrer">https://suisuijiang.com</a>
-                            </div>
-                            <div>
-                                <p>如何运行</p>
-                                <a href="https://github.com/yinxin630/fiora/blob/master/doc/INSTALL.ZH.md" target="_black" rel="noopener noreferrer">https://github.com/yinxin630/fiora/blob/master/doc/INSTALL.ZH.md</a>
-                            </div>
-                            <div>
-                                <p>架构 / 设计思路</p>
-                                <a href="https://github.com/yinxin630/blog/issues/3" target="_black" rel="noopener noreferrer">https://github.com/yinxin630/blog/issues/3</a>
-                            </div>
-                            <div>
-                                <p>将fiora安装到主屏(PWA)</p>
-                                <ul>
-                                    <li>地址栏输入: Chrome://flags</li>
-                                    <li>搜索并启用以下项目: Desktop PWAs(桌面PWAs)、App Banners(应用横幅)、Experimental App Banners(实验性应用横幅)</li>
-                                    <li>重启浏览器使修改的设置生效</li>
-                                    <li>点击地址栏最右边按钮</li>
-                                    <li>选择&quot;安装 fiora&quot;</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <p>输入框快捷键</p>
-                                <ul>
-                                    <li>Alt + S: 发送滑稽</li>
-                                    <li>Alt + D: 发送表情包</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </Dialog>
-                    <AppDownload visible={appDownloadDialog} onClose={this.toggleAppDownloadDialog} />
                     <AdminDialog visible={adminDialog} onClose={this.toggleAdminDialog} />
                 </div>
             );
